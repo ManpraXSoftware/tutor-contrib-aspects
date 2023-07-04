@@ -7,6 +7,8 @@ from flask import current_app, session
 from superset.security import SupersetSecurityManager
 from superset.utils.memoized import memoized
 
+from flask import request
+
 log = logging.getLogger(__name__)
 
 
@@ -59,7 +61,9 @@ class OpenEdxSsoSecurityManager(SupersetSecurityManager):
         if provider == "openedxsso":
             user_profile = self.decoded_user_info()
 
-            user_roles = self._get_user_roles(user_profile.get("preferred_username"))
+            language_preference = request.cookies.get('openedx-language-preference', 'en')
+
+            user_roles = self._get_user_roles(user_profile.get("preferred_username"), language_preference)
 
             return {
                 "name": user_profile["name"],
@@ -88,21 +92,21 @@ class OpenEdxSsoSecurityManager(SupersetSecurityManager):
         """
         return self.get_oauth_token().get("access_token")
 
-    def _get_user_roles(self, username):
+    def _get_user_roles(self, username, language):
         """
         Returns the Superset roles that should be associated with the given user.
         """
         decoded_access_token = self.decoded_user_info()
 
         if decoded_access_token.get("superuser", False):
-            return ["admin", "openedx"]
+            return ["admin", "openedx", f"openedx-{language}"]
         elif decoded_access_token.get("administrator", False):
-            return ["alpha", "openedx"]
+            return ["alpha", "openedx", f"openedx-{language}"]
         else:
             # User has to have staff access to one or more courses to view any content here.
             courses = self.get_courses(username)
             if courses:
-                return ["openedx"]
+                return ["openedx", f"openedx-{language}"]
             return []
 
     @memoized(watch=("access_token",))

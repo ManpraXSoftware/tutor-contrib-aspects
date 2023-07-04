@@ -1,4 +1,4 @@
-- _file_name: Open_edX_Admin_Dashboard_2.yaml
+- _file_name: Open_edX_Admin_Dashboard_2
   _roles:
   - {{ SUPERSET_OPENEDX_ROLE_NAME }}
   css: ''
@@ -71,7 +71,7 @@
       meta:
         chartId: 8
         height: 50
-        sliceName: Video events
+        sliceName: Eventos de video
         uuid: 0cc08ea4-fe3f-45ef-89b9-21d9e2c4c5ff
         width: 4
       parents:
@@ -181,7 +181,7 @@
   uuid: 4bd1ace4-2327-4ff0-985b-ef014cb0503b
   version: 1.0.0
 
-- _file_name: xapi_events_all_parsed.yaml
+- _file_name: xapi_events_all_parsed
   cache_timeout: null
   columns:
   - advanced_data_type: null
@@ -354,7 +354,7 @@
   uuid: 2a2498dc-03ce-41a0-b798-d84f808f7da6
   version: 1.0.0
 
-- _file_name: xAPI_problem_events_by_block_7.yaml
+- _file_name: xAPI_problem_events_by_block_7
   cache_timeout: null
   dataset_uuid: 2a2498dc-03ce-41a0-b798-d84f808f7da6
 
@@ -420,7 +420,7 @@
   version: 1.0.0
   viz_type: echarts_timeseries_bar
 
-- _file_name: Video_events_8.yaml
+- _file_name: Video_events_8
   cache_timeout: null
   dataset_uuid: 2a2498dc-03ce-41a0-b798-d84f808f7da6
   params:
@@ -482,7 +482,7 @@
   version: 1.0.0
   viz_type: echarts_timeseries_bar
 
-- _file_name: xAPI_events_9.yaml
+- _file_name: xAPI_events_9
   cache_timeout: null
   dataset_uuid: 2a2498dc-03ce-41a0-b798-d84f808f7da6
 
@@ -514,7 +514,7 @@
   version: 1.0.0
   viz_type: table
 
-- _file_name: Events_per_day_10.yaml
+- _file_name: Events_per_day_10
   cache_timeout: null
   dataset_uuid: 2a2498dc-03ce-41a0-b798-d84f808f7da6
   params:
@@ -543,7 +543,7 @@
   version: 1.0.0
   viz_type: big_number
 
-- _file_name: xAPI_events_by_course_11.yaml
+- _file_name: xAPI_events_by_course_11
   cache_timeout: null
   dataset_uuid: 2a2498dc-03ce-41a0-b798-d84f808f7da6
   params:
@@ -587,7 +587,7 @@
   version: 1.0.0
   viz_type: echarts_timeseries_bar
 
-- _file_name: OpenedX_Clickhouse.yaml
+- _file_name: OpenedX_Clickhouse
   database_name: OpenedX Clickhouse
   sqlalchemy_uri: {{CLICKHOUSE_REPORT_SQLALCHEMY_URI}}
   cache_timeout: null
@@ -604,7 +604,7 @@
   uuid: 21174b6c-4d40-4958-8161-d6c3cf5e77b6
   version: 1.0.0
 
-- _file_name: video_plays.yaml
+- _file_name: video_plays
   cache_timeout: null
   columns:
   - advanced_data_type: null
@@ -701,7 +701,7 @@
   uuid: 14b6e4d0-7345-4477-9a11-85a7359bc3b1
   version: 1.0.0
 
-- _file_name: transcript_usage.yaml
+- _file_name: transcript_usage
   cache_timeout: null
   columns:
   - advanced_data_type: null
@@ -798,7 +798,7 @@
   uuid: bfbc2c72-4745-40ff-a7db-786711b90321
   version: 1.0.0
 
-- _file_name: Instructor_dashboard_4.yaml
+- _file_name: Instructor_dashboard_4
   _roles:
   - {{ SUPERSET_OPENEDX_ROLE_NAME }}
   css: ''
@@ -944,7 +944,7 @@
   uuid: 1d6bf904-f53f-47fd-b1c9-6cd7e284d286
   version: 1.0.0
 
-- _file_name: Watches_per_video_12.yaml
+- _file_name: Watches_per_video_12
   cache_timeout: null
   dataset_uuid: 14b6e4d0-7345-4477-9a11-85a7359bc3b1
   params:
@@ -977,7 +977,7 @@
   version: 1.0.0
   viz_type: dist_bar
 
-- _file_name: Transcript_closed_captioning_usage_per_video_14.yaml
+- _file_name: Transcript_closed_captioning_usage_per_video_14
   cache_timeout: null
   dataset_uuid: bfbc2c72-4745-40ff-a7db-786711b90321
   params:

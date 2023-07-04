@@ -5226,5 +5226,8 @@
         }
       }
     ]
-  }
+  }{% for role in SUPERSET_SUPPORTED_LANGUAGES %},{
+    "name": "{{SUPERSET_OPENEDX_ROLE_NAME}} - {{role}}",
+    "permissions": []
+  }{% endfor %}
 ]
